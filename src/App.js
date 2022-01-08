@@ -1,12 +1,13 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
-import { Header, ButtonProps } from "./components/common";
-
+import Navbar from "./components/Navbar/Navbar";
+import Menu from "./components/Menu/Menu";
 const GlobalStyle = createGlobalStyle`
 body {
   color: #000;
   background-color:#f2f2f2;
   font-family: 'Ubuntu', sans-serif;
+  margin: 0;
 }
 html {
   height: 100%;
@@ -20,14 +21,8 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Header title="hi this is from app.js" />
-      <ButtonProps bcolor="blue" color="white">
-        Primary Button
-      </ButtonProps>
-      <ButtonProps bcolor="white" color="#696969">
-        Secondary Button
-      </ButtonProps>
-      <ButtonProps>Third Button</ButtonProps>
+      <Navbar />
+      <Menu />
     </>
   );
 };
