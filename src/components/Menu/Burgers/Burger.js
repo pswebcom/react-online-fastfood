@@ -6,7 +6,7 @@ import {
   Button,
 } from "../../common";
 
-const Burger = ({ burger }) => {
+const Burger = ({ burger, setOpenFood }) => {
   return (
     <TemplateStyled>
       <TemplateImageStyled>
@@ -16,7 +16,13 @@ const Burger = ({ burger }) => {
         <p>{burger.name}</p>
         <p>{burger.price}</p>
       </TemplateDescStyled>
-      <Button>Buy</Button>
+      <Button
+        onClick={() => {
+          setOpenFood(burger);
+        }}
+      >
+        Buy
+      </Button>
     </TemplateStyled>
   );
 };

@@ -1,6 +1,10 @@
 import React from "react";
 import Pizza from "./Pizza";
-import { SectionTitle, TemplateComponentStyled } from "../../common";
+import {
+  SectionTitle,
+  TemplateComponentStyled,
+  WrapStyledColumn,
+} from "../../common";
 
 const pizzas = [
   { name: "Veggie Pizza", price: "$15", color: "green" },
@@ -17,10 +21,10 @@ const pizzaList = pizzas.map((pizza) => <Pizza pizza={pizza} />);
 
 const Pizzas = () => {
   return (
-    <>
+    <WrapStyledColumn>
       <SectionTitle>PIZZA</SectionTitle>
       <TemplateComponentStyled>{pizzaList}</TemplateComponentStyled>
-    </>
+    </WrapStyledColumn>
   );
 };
 

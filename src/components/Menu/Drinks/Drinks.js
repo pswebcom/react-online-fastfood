@@ -1,6 +1,10 @@
 import React from "react";
 import Drink from "./Drink";
-import { SectionTitle, TemplateComponentStyled } from "../../common";
+import {
+  SectionTitle,
+  TemplateComponentStyled,
+  WrapStyledColumn,
+} from "../../common";
 
 const drinks = [
   { name: "Coke", price: "$3.75", color: "#C71514" },
@@ -14,10 +18,10 @@ const drinkList = drinks.map((drink) => <Drink drink={drink} />);
 
 const Drinks = () => {
   return (
-    <>
+    <WrapStyledColumn>
       <SectionTitle>DRINKS</SectionTitle>
       <TemplateComponentStyled>{drinkList}</TemplateComponentStyled>
-    </>
+    </WrapStyledColumn>
   );
 };
 

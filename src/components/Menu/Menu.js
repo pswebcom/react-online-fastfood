@@ -1,13 +1,25 @@
 import React from "react";
-import Burgers from "./Burgers/Burgers";
-import Pizzas from "./Pizzas/Pizzas";
-import Drinks from "./Drinks/Drinks";
+
+import {
+  TemplateMenuStyled,
+  TemplateMenuComponentStyled,
+  MenuHeading,
+} from "../common";
+
 const Menu = () => {
   return (
     <>
-      <Burgers />
-      <Pizzas />
-      <Drinks />
+      <TemplateMenuStyled>
+        <TemplateMenuComponentStyled>
+          <MenuHeading>Burger</MenuHeading>
+        </TemplateMenuComponentStyled>
+        <TemplateMenuComponentStyled>
+          <MenuHeading>Pizza</MenuHeading>
+        </TemplateMenuComponentStyled>
+        <TemplateMenuComponentStyled>
+          <MenuHeading>Drink</MenuHeading>
+        </TemplateMenuComponentStyled>
+      </TemplateMenuStyled>
     </>
   );
 };

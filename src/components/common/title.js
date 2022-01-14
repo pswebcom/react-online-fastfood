@@ -10,4 +10,6 @@ const SectionTitle = styled.div`
   padding-top: 1rem;
 `;
 
-export { Title, SectionTitle };
+const MenuHeading = styled.h1``;
+
+export { Title, SectionTitle, MenuHeading };

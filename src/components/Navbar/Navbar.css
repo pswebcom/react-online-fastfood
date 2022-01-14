@@ -1,0 +1,18 @@
+.active {
+  color: gold;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.not-active {
+  color: #fff;
+  font-size: 1.3rem;
+  text-decoration: none;
+  outline: none;
+}
+
+.not-active:hover {
+  color: green;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
