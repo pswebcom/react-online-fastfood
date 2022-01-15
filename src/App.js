@@ -18,18 +18,26 @@ const App = () => {
       <GlobalStyle />
       <Router>
         <Navbar />
-        {/*zgot openfood from button click */}
-        <FoodModal FoodInfo={openFood} />
+        {/*got openfood from div click & in FoodModal setOpenFood is for closing */}
+        <FoodModal FoodInfo={openFood} setOpenFood={setOpenFood} />
         <WrapStyledRow>
           <Routes>
-            <Route exact path="/" element={<Menu />} />
+            <Route exact="true" path="/" element={<Menu />} />
             <Route
-              exact
+              exact="true"
               path="/burger"
               element={<Burgers setOpenFood={setOpenFood} />}
             />
-            <Route exact path="/drink" element={<Drinks />} />
-            <Route exact path="/pizza" element={<Pizzas />} />
+            <Route
+              exact="true"
+              path="/drink"
+              element={<Drinks setOpenFood={setOpenFood} />}
+            />
+            <Route
+              exact="true"
+              path="/pizza"
+              element={<Pizzas setOpenFood={setOpenFood} />}
+            />
           </Routes>
           <Cart />
         </WrapStyledRow>

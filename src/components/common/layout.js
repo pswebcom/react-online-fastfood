@@ -14,14 +14,19 @@ const WrapStyledColumn = styled.div`
 `;
 
 const CartStyled = styled.div`
-  height: 100vh;
+  height: 83vh;
   min-width: 40%;
   max-width: 40%;
   margin-top: 6.3rem;
-  background-color: red;
   position: fixed;
   right: 0;
   padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
 `;
 
 export { WrapStyledColumn, WrapStyledRow, CartStyled };

@@ -14,7 +14,7 @@ const TemplateStyled = styled.div`
   flex-shrink: 0;
   flex-basis: 18rem;
   min-width: 18rem;
-  height: 310px;
+  height: 270px;
   border: 0.2px solid #ccc;
   padding: 0.3rem;
 
@@ -26,13 +26,13 @@ const TemplateStyled = styled.div`
 
 const TemplateImageStyled = styled.div`
   text-align: center;
-  font-size: 7rem;
+  font-size: 10rem;
 `;
 
 const TemplateDescStyled = styled.div`
-  color: darkgray;
+  color: #696969;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 `;
 
 const TemplateMenuStyled = styled.div`

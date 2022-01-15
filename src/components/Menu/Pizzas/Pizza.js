@@ -3,20 +3,21 @@ import {
   TemplateStyled,
   TemplateImageStyled,
   TemplateDescStyled,
-  Button,
 } from "../../common";
 
-const Pizza = ({ pizza }) => {
+const Pizza = ({ pizza, setOpenFood }) => {
   return (
-    <TemplateStyled>
+    <TemplateStyled
+      onClick={() => {
+        setOpenFood(pizza);
+      }}
+    >
       <TemplateImageStyled>
-        <i class="fas fa-pizza-slice" style={{ color: pizza.color }}></i>
+        <i className="fas fa-pizza-slice" style={{ color: pizza.color }}></i>
       </TemplateImageStyled>
       <TemplateDescStyled>
         <p>{pizza.name}</p>
-        <p>{pizza.price}</p>
       </TemplateDescStyled>
-      <Button>Buy</Button>
     </TemplateStyled>
   );
 };

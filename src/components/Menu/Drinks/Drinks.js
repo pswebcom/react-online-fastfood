@@ -7,20 +7,55 @@ import {
 } from "../../common";
 
 const drinks = [
-  { name: "Coke", price: "$3.75", color: "#C71514" },
-  { name: "Diet Coke", price: "$3.50", color: "#ADB2B6" },
-  { name: "Pepsi", price: "$3.75", color: "#056DB4" },
-  { name: "Diet Pepsi", price: "$3.50", color: "#837D79" },
-  { name: "Sprite", price: "$3", color: "#036B26" },
+  {
+    id: "d1",
+    name: "Coke",
+    price: "$3.75",
+    color: "#C71514",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "d2",
+    name: "Diet Coke",
+    price: "$3.50",
+    color: "#ADB2B6",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "d3",
+    name: "Pepsi",
+    price: "$3.75",
+    color: "#056DB4",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "d4",
+    name: "Diet Pepsi",
+    price: "$3.50",
+    color: "#837D79",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "d5",
+    name: "Sprite",
+    price: "$3",
+    color: "#036B26",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
 ];
 
-const drinkList = drinks.map((drink) => <Drink drink={drink} />);
+// const drinkList = drinks.map((drink) => <Drink drink={drink} />);
 
-const Drinks = () => {
+const Drinks = (props) => {
   return (
     <WrapStyledColumn>
       <SectionTitle>DRINKS</SectionTitle>
-      <TemplateComponentStyled>{drinkList}</TemplateComponentStyled>
+      {/* <TemplateComponentStyled>{drinkList}</TemplateComponentStyled> */}
+      <TemplateComponentStyled>
+        {drinks.map((drink) => (
+          <Drink key={drink.id} drink={drink} {...props} />
+        ))}
+      </TemplateComponentStyled>
     </WrapStyledColumn>
   );
 };

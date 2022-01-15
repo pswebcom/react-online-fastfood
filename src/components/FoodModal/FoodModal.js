@@ -7,12 +7,13 @@ const DialogShadowStyled = styled.div`
   position: fixed;
   top: 0;
   background-color: black;
-  opacity: 0.9;
+  opacity: 1;
   z-index: 4;
+  cursor: pointer;
 `;
 
 const DialogStyled = styled.div`
-  width: 22%;
+  width: 30%;
   background-color: #fff;
   position: fixed;
   left: 50%;
@@ -21,6 +22,7 @@ const DialogStyled = styled.div`
   z-index: 5;
   max-height: calc(100%-100px);
   left: calc(50%-250px);
+  padding-top: 1rem;
 `;
 
 const IconStyled = styled.div`
@@ -29,26 +31,125 @@ const IconStyled = styled.div`
   align-items: center;
 `;
 
-// const DialogBannerStyled = styled.div`
-//   min-height: 200px;
-//   margin-bottom: 20px;
-// `;
+const NameStyled = styled.div`
+  text-align: center;
+  font-size: 2rem;
+  h3 {
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
+  }
+`;
 
-const Foodmodal = ({ FoodInfo }) => {
+const PriceStyled = styled.div`
+  text-align: center;
+  font-size: 2rem;
+
+  h3 {
+    margin: 0;
+  }
+`;
+
+const DescStyled = styled.div`
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+  p {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+`;
+
+const CancelIconStyled = styled.div`
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+  cursor: pointer;
+
+  i {
+    font-size: 5rem;
+    color: #fff;
+  }
+`;
+
+const OrderManageStyled = styled.div``;
+
+export const OrderButtonDivStyled = styled.div`
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  background: #ffca33;
+  box-shadow: 0 2px 20px 0 gray;
+  z-index: 5;
+`;
+
+export const OrderButtonStyled = styled.div`
+  color: #000;
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1.5rem;
+
+  &:hover {
+    opacity: 0.4;
+  }
+`;
+
+const Foodmodal = ({ FoodInfo, setOpenFood }) => {
+  const close = () => {
+    setOpenFood();
+  };
+
+  let myVal;
+  const checkIconStaus = (Info) => {
+    let id = Info.id;
+    if (id.includes("b")) {
+      myVal = "fas fa-hamburger";
+    } else if (id.includes("p")) {
+      myVal = "fas fa-pizza-slice";
+    } else {
+      myVal = "fab fa-gulp";
+    }
+  };
+
+  if (FoodInfo) {
+    checkIconStaus(FoodInfo);
+  }
+
   return FoodInfo ? (
     <>
-      <DialogShadowStyled>
+      <DialogShadowStyled onClick={close}>
         <DialogStyled>
           <IconStyled>
             <i
-              class="fas fa-hamburger"
+              className={myVal}
               style={{
                 color: FoodInfo.color,
                 fontSize: "12rem",
               }}
             ></i>
           </IconStyled>
+          <NameStyled>
+            <h3>{FoodInfo.name}</h3>
+          </NameStyled>
+          <PriceStyled>
+            <h3>{FoodInfo.price}</h3>
+          </PriceStyled>
+          <DescStyled>
+            <p>{FoodInfo.desc}</p>
+          </DescStyled>
+          <OrderManageStyled></OrderManageStyled>
+          <OrderButtonDivStyled>
+            <OrderButtonStyled>Add To Order</OrderButtonStyled>
+          </OrderButtonDivStyled>
         </DialogStyled>
+        <CancelIconStyled onClick={close}>
+          <i class="fas fa-window-close"></i>
+        </CancelIconStyled>
       </DialogShadowStyled>
     </>
   ) : (

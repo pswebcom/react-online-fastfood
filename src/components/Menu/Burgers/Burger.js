@@ -3,26 +3,21 @@ import {
   TemplateStyled,
   TemplateImageStyled,
   TemplateDescStyled,
-  Button,
 } from "../../common";
 
 const Burger = ({ burger, setOpenFood }) => {
   return (
-    <TemplateStyled>
+    <TemplateStyled
+      onClick={() => {
+        setOpenFood(burger);
+      }}
+    >
       <TemplateImageStyled>
-        <i class="fas fa-hamburger" style={{ color: burger.color }}></i>
+        <i className="fas fa-hamburger" style={{ color: burger.color }}></i>
       </TemplateImageStyled>
       <TemplateDescStyled>
         <p>{burger.name}</p>
-        <p>{burger.price}</p>
       </TemplateDescStyled>
-      <Button
-        onClick={() => {
-          setOpenFood(burger);
-        }}
-      >
-        Buy
-      </Button>
     </TemplateStyled>
   );
 };

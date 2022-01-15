@@ -7,14 +7,62 @@ import {
 } from "../../common";
 
 const burgers = [
-  { id: 1, name: "Chilli Burger", price: "$11", color: "red" },
-  { id: 2, name: "Veggie Burger", price: "$15", color: "green" },
-  { id: 3, name: "Egg Burger", price: "$11", color: "#F4c430" },
-  { id: 4, name: "Chicken Burger", price: "$11", color: "goldenrod" },
-  { id: 5, name: "Mushroom Burger", price: "$12", color: "tomato" },
-  { id: 6, name: "Cheese Burger", price: "$14", color: "#355e3b" },
-  { id: 7, name: "Steak Burger", price: "$11", color: "yellowgreen" },
-  { id: 8, name: "Noodle Burger", price: "$11", color: "olive" },
+  {
+    id: "b1",
+    name: "Chilli Burger",
+    price: "$11",
+    color: "red",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "b2",
+    name: "Veggie Burger",
+    price: "$15",
+    color: "green",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "b3",
+    name: "Egg Burger",
+    price: "$11",
+    color: "#F4c430",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "b4",
+    name: "Chicken Burger",
+    price: "$11",
+    color: "goldenrod",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "b5",
+    name: "Mushroom Burger",
+    price: "$12",
+    color: "tomato",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "b6",
+    name: "Cheese Burger",
+    price: "$14",
+    color: "#355e3b",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "b7",
+    name: "Steak Burger",
+    price: "$11",
+    color: "yellowgreen",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
+  {
+    id: "b8",
+    name: "Noodle Burger",
+    price: "$11",
+    color: "olive",
+    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  },
 ];
 
 // const burgerList = burgers.map((burger) => <Burger burger={burger} />);

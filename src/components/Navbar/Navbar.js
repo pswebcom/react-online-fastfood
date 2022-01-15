@@ -46,7 +46,7 @@ const Navbar = () => {
             <ListStyled>
               <NavLink
                 to="/burger"
-                exact
+                exact="true"
                 className={({ isActive }) =>
                   isActive ? "active" : "not-active"
                 }
@@ -57,7 +57,7 @@ const Navbar = () => {
             <ListStyled>
               <NavLink
                 to="/drink"
-                exact
+                exact="true"
                 className={({ isActive }) =>
                   isActive ? "active" : "not-active"
                 }
@@ -68,7 +68,7 @@ const Navbar = () => {
             <ListStyled>
               <NavLink
                 to="/pizza"
-                exact
+                exact="true"
                 className={({ isActive }) =>
                   isActive ? "active" : "not-active"
                 }
@@ -79,12 +79,12 @@ const Navbar = () => {
             <ListStyled>
               <NavLink
                 to="/cart"
-                exact
+                exact="true"
                 className={({ isActive }) =>
                   isActive ? "active" : "not-active"
                 }
               >
-                <i class="fa fa-shopping-cart"></i>
+                <i className="fa fa-shopping-cart"></i>
               </NavLink>
             </ListStyled>
           </MenuListStyled>
