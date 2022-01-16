@@ -38,7 +38,7 @@ const drinks = [
   {
     id: "d5",
     name: "Sprite",
-    price: "$3",
+    price: "$3.75",
     color: "#036B26",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
   },

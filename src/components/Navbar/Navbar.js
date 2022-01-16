@@ -35,8 +35,6 @@ const ListStyled = styled.li``;
 
 const Navbar = () => {
   let location = useLocation();
-  console.log("pathname=", location.pathname);
-
   return (
     <>
       {location.pathname !== "/" && (

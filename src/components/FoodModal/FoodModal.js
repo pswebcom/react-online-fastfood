@@ -99,9 +99,19 @@ export const OrderButtonStyled = styled.div`
   }
 `;
 
-const Foodmodal = ({ FoodInfo, setOpenFood }) => {
+const Foodmodal = ({ openFood, setOpenFood, orders, setOrders }) => {
   const close = () => {
     setOpenFood();
+  };
+
+  const order = {
+    ...openFood,
+  };
+  const addToOrder = () => {
+    //previous orders + latest order
+    setOrders([...orders, order]);
+    //hook closed
+    close();
   };
 
   let myVal;
@@ -116,11 +126,11 @@ const Foodmodal = ({ FoodInfo, setOpenFood }) => {
     }
   };
 
-  if (FoodInfo) {
-    checkIconStaus(FoodInfo);
+  if (openFood) {
+    checkIconStaus(openFood);
   }
 
-  return FoodInfo ? (
+  return openFood ? (
     <>
       <DialogShadowStyled onClick={close}>
         <DialogStyled>
@@ -128,23 +138,25 @@ const Foodmodal = ({ FoodInfo, setOpenFood }) => {
             <i
               className={myVal}
               style={{
-                color: FoodInfo.color,
+                color: openFood.color,
                 fontSize: "12rem",
               }}
             ></i>
           </IconStyled>
           <NameStyled>
-            <h3>{FoodInfo.name}</h3>
+            <h3>{openFood.name}</h3>
           </NameStyled>
           <PriceStyled>
-            <h3>{FoodInfo.price}</h3>
+            <h3>{openFood.price}</h3>
           </PriceStyled>
           <DescStyled>
-            <p>{FoodInfo.desc}</p>
+            <p>{openFood.desc}</p>
           </DescStyled>
           <OrderManageStyled></OrderManageStyled>
           <OrderButtonDivStyled>
-            <OrderButtonStyled>Add To Order</OrderButtonStyled>
+            <OrderButtonStyled onClick={addToOrder}>
+              Add To Order
+            </OrderButtonStyled>
           </OrderButtonDivStyled>
         </DialogStyled>
         <CancelIconStyled onClick={close}>
