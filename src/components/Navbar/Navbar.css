@@ -5,14 +5,15 @@
 }
 
 .not-active {
-  color: #fff;
+  color: #355e3b;
   font-size: 1.3rem;
   text-decoration: none;
   outline: none;
+  font-weight: 700;
 }
 
 .not-active:hover {
-  color: green;
+  color: gold;
   font-size: 1.3rem;
   text-decoration: none;
 }

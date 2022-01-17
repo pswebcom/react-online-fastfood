@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const WrapStyledRow = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: space-between;
+  width: 98%;
   margin: 0 auto;
-  border: 2px solid green;
+  box-sizing: border-box;
 `;
 
 const WrapStyledColumn = styled.div`
@@ -15,19 +15,34 @@ const WrapStyledColumn = styled.div`
 
 const CartStyled = styled.div`
   height: 83vh;
-  min-width: 38%;
-  max-width: 38%;
+  min-width: 43%;
   margin-top: 6.3rem;
-  margin-right: 1rem;
+  box-sizing: border-box;
   position: fixed;
-  right: 0;
+  right: 0.7rem;
   padding: 1rem;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #ccc;
   background-color: #fff;
+
+  @media screen and (max-width: 991px) {
+    max-width: 45.5%;
+    min-width: 45.5%;
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 0;
+  }
+
+  @media screen and (max-width: 760px) {
+    max-width: 55%;
+    min-width: 55%;
+  }
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
 `;
 
 export { WrapStyledColumn, WrapStyledRow, CartStyled };

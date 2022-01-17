@@ -3,25 +3,9 @@ import { CartStyled } from "../common";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-const OrderButtonDivStyled = styled.div`
-  display: flex;
-  padding: 1rem 0;
-  justify-content: center;
-  align-items: center;
-  background: #ffca33;
-  box-shadow: 0 2px 20px 0 gray;
-  z-index: 5;
-  width: 100%;
-  font-size: 1.5rem;
-
-  &&:hover {
-    opacity: 0.7;
-    cursor: pointer;
-  }
-`;
-
 const OrderContentStyled = styled.div`
   padding: 10px 0;
+  font-family: "Ubuntu", sans-serif;
 `;
 
 const OrderContainerStyled = styled.div`
@@ -34,8 +18,10 @@ const OrderContainerStyled = styled.div`
 const RowStyled = styled.div`
   display: flex;
   padding: 0.5rem;
-
+  font-family: "Exo", sans-serif;
   justify-content: space-between;
+  font-weight: 500;
+
   &:nth-child(even) {
     background: #eee;
   }
@@ -60,12 +46,40 @@ const OrderItemStyled = styled.div`
   font-size: 1.5rem;
   width: 205px;
   text-align: center;
+  @media screen and (max-width: 991px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const OrderPriceStyled = styled.div`
   font-size: 1.5rem;
   width: 90px;
   text-align: center;
+  @media screen and (max-width: 991px) {
+    font-size: 1.3rem;
+  }
+`;
+
+const OrderButtonDivStyled = styled.div`
+  display: flex;
+  padding: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  background: #ffca33;
+  box-shadow: 0 2px 20px 0 gray;
+  z-index: 5;
+  width: 100%;
+  font-size: 1.5rem;
+  font-family: "Exo", sans-serif;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 88%;
+  }
 `;
 
 const OrderCancelStyled = styled.div`
@@ -73,6 +87,14 @@ const OrderCancelStyled = styled.div`
   i {
     cursor: pointer;
     color: red;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    font-size: 1.3rem;
   }
 `;
 
@@ -80,14 +102,6 @@ const showItems = () => {};
 
 const Cart = ({ orders }) => {
   let modifiedOrders = orders;
-  // jsObj = {};
-
-  // for (var i = 1; i <= 10; i++) {
-  //   jsObj["key" + i] = "example" + 1;
-  // }
-  let totItems = Object.keys(modifiedOrders).length;
-
-  let myVal;
   const checkIconStaus = (modifiedOrders) => {
     modifiedOrders.forEach((mOrder) => {
       let _id = mOrder.id;

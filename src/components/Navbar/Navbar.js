@@ -14,14 +14,16 @@ const NavbarStyled = styled.div`
   align-items: center;
   position: fixed;
   width: 100%;
+  font-family: "Exo", sans-serif;
 `;
 
 const Logo = styled(Title)`
-  color: #fff;
-  font-size: 1.4rem;
+  color: #355e3b;
+  font-size: 1.8rem;
   letter-spacing: 2px;
   padding-left: 5px;
   text-shadow: 2px 2px 3px #edaf6b;
+  font-weight: 800;
 `;
 
 const MenuListStyled = styled.ul`
@@ -31,7 +33,14 @@ const MenuListStyled = styled.ul`
   align-items: center;
   width: 25%;
 `;
-const ListStyled = styled.li``;
+const ListStyled = styled.li`
+  NavLink {
+    color: #355e3b;
+  }
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
+`;
 
 const Navbar = () => {
   let location = useLocation();

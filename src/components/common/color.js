@@ -1,3 +1,3 @@
-const NavbarColor = "#2F3857";
+const NavbarColor = "#fff";
 
 export { NavbarColor };
