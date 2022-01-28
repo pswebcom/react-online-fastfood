@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { useQuantityHook } from "../../Hooks/useQuantityHook";
+import QuantityInput from "../FoodModal/QuantityInput";
 
 const DialogShadowStyled = styled.div`
   width: 100%;
@@ -8,7 +10,7 @@ const DialogShadowStyled = styled.div`
   top: 0;
   background-color: black;
   opacity: 1;
-  z-index: 4;
+  z-index: 104;
   cursor: pointer;
 `;
 
@@ -19,7 +21,7 @@ const DialogStyled = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 5;
+  /* z-index: 1; */
   max-height: calc(100%-100px);
   left: calc(50%-250px);
   padding-top: 1rem;
@@ -50,12 +52,13 @@ const PriceStyled = styled.div`
 `;
 
 const DescStyled = styled.div`
-  padding: 1rem;
+  padding: 0 1rem;
   text-align: left;
   font-size: 1rem;
   p {
     font-size: 1.2rem;
     margin-top: 0;
+    margin-bottom: 0;
   }
 `;
 
@@ -84,32 +87,40 @@ export const OrderButtonDivStyled = styled.div`
 
 export const OrderButtonStyled = styled.div`
   color: #000;
-  height: 40px;
-  padding: 10px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   cursor: pointer;
   background-color: transparent;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 
   &:hover {
     opacity: 0.4;
   }
 `;
 
-const Foodmodal = ({ openFood, setOpenFood, orders, setOrders }) => {
+const FoodModalContainer = ({
+  openFoodHook,
+  setOpenFoodHook,
+  ordersHook,
+  setOrdersHook,
+}) => {
+  //passing quantity to hook
+  const quantity = useQuantityHook(openFoodHook && openFoodHook.quantity);
+
   const close = () => {
-    setOpenFood();
+    setOpenFoodHook();
   };
 
   const order = {
-    ...openFood,
+    ...openFoodHook,
+    quantity,
   };
   const addToOrder = () => {
     //previous orders + latest order
-    setOrders([...orders, order]);
+    setOrdersHook([...ordersHook, order]);
     //hook closed
     close();
   };
@@ -126,33 +137,37 @@ const Foodmodal = ({ openFood, setOpenFood, orders, setOrders }) => {
     }
   };
 
-  if (openFood) {
-    checkIconStaus(openFood);
+  if (openFoodHook) {
+    checkIconStaus(openFoodHook);
   }
 
-  return openFood ? (
+  return (
     <>
-      <DialogShadowStyled onClick={close}>
+      <DialogShadowStyled>
         <DialogStyled>
           <IconStyled>
             <i
               className={myVal}
               style={{
-                color: openFood.color,
+                color: openFoodHook.color,
                 fontSize: "12rem",
               }}
             ></i>
           </IconStyled>
+          ``
           <NameStyled>
-            <h3>{openFood.name}</h3>
+            <h3>{openFoodHook.name}</h3>
           </NameStyled>
           <PriceStyled>
-            <h3>{openFood.price}</h3>
+            <h3>{openFoodHook.price}</h3>
           </PriceStyled>
           <DescStyled>
-            <p>{openFood.desc}</p>
+            <p>{openFoodHook.desc}</p>
           </DescStyled>
-          <OrderManageStyled></OrderManageStyled>
+          <OrderManageStyled>
+            {/* passing quantity props */}
+            <QuantityInput quantity={quantity}></QuantityInput>
+          </OrderManageStyled>
           <OrderButtonDivStyled>
             <OrderButtonStyled onClick={addToOrder}>
               Add To Order
@@ -160,13 +175,14 @@ const Foodmodal = ({ openFood, setOpenFood, orders, setOrders }) => {
           </OrderButtonDivStyled>
         </DialogStyled>
         <CancelIconStyled onClick={close}>
-          <i class="fas fa-window-close"></i>
+          <i className="fas fa-window-close"></i>
         </CancelIconStyled>
       </DialogShadowStyled>
     </>
-  ) : (
-    ""
   );
 };
 
-export default Foodmodal;
+export function FoodModal(props) {
+  if (!props.openFoodHook) return null;
+  return <FoodModalContainer {...props} />;
+}

@@ -5,11 +5,11 @@ import {
   TemplateDescStyled,
 } from "../../common";
 
-const Pizza = ({ pizza, setOpenFood }) => {
+const Pizza = ({ pizza, setOpenFoodHook }) => {
   return (
     <TemplateStyled
       onClick={() => {
-        setOpenFood(pizza);
+        setOpenFoodHook(pizza);
       }}
     >
       <TemplateImageStyled>

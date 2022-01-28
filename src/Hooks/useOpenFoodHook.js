@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useOpenFoodHook = () => {
-  const [openFood, setOpenFood] = useState();
+  const [openFoodHook, setOpenFoodHook] = useState();
 
-  return { openFood, setOpenFood };
+  return { openFoodHook, setOpenFoodHook };
 };

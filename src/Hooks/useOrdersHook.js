@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useOrdersHook = () => {
-  const [orders, setOrders] = useState([]);
+  const [ordersHook, setOrdersHook] = useState([]);
 
-  return { orders, setOrders };
+  return { ordersHook, setOrdersHook };
 };

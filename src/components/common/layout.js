@@ -15,7 +15,8 @@ const WrapStyledColumn = styled.div`
 
 const CartStyled = styled.div`
   height: 83vh;
-  min-width: 43%;
+  min-width: 43.5%;
+  max-width: 43%;
   margin-top: 6.3rem;
   box-sizing: border-box;
   position: fixed;
@@ -30,6 +31,7 @@ const CartStyled = styled.div`
   @media screen and (max-width: 991px) {
     max-width: 45.5%;
     min-width: 45.5%;
+    padding: 0;
   }
 
   @media screen and (max-width: 800px) {
