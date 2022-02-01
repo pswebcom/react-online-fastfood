@@ -29,8 +29,8 @@ const CartStyled = styled.div`
   background-color: #fff;
 
   @media screen and (max-width: 991px) {
-    max-width: 45.5%;
-    min-width: 45.5%;
+    max-width: 53.5%;
+    min-width: 53.5%;
     padding: 0;
   }
 

@@ -19,7 +19,7 @@ const pizzas = [
   {
     id: "p2",
     name: "Chilli Pizza",
-    price: 11.1,
+    price: 11.15,
     color: "red",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     quantity: 1,
@@ -27,7 +27,7 @@ const pizzas = [
   {
     id: "p3",
     name: "Egg Pizza",
-    price: 11.0,
+    price: 11.12,
     color: "#F4c430",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     quantity: 1,
@@ -43,7 +43,7 @@ const pizzas = [
   {
     id: "p5",
     name: "Mushroom Pizza",
-    price: 12.1,
+    price: 12.11,
     color: "tomato",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     quantity: 1,
@@ -67,7 +67,7 @@ const pizzas = [
   {
     id: "p8",
     name: "Noodle Pizza",
-    price: 11.0,
+    price: 11.21,
     color: "olive",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     quantity: 1,

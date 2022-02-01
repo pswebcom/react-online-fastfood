@@ -8,8 +8,8 @@ const TemplateComponentStyled = styled.div`
   padding-top: 2rem;
   text-align: center;
   @media screen and (max-width: 991px) {
-    min-width: 52%;
-    max-width: 48%;
+    min-width: 40%;
+    max-width: 44%;
   }
 
   @media screen and (max-width: 760px) {

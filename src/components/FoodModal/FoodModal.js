@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useQuantityHook } from "../../Hooks/useQuantityHook";
 import QuantityInput from "../FoodModal/QuantityInput";
+import ToppingInput from "../FoodModal/ToppingInput";
 
 const DialogShadowStyled = styled.div`
   width: 100%;
@@ -15,7 +16,7 @@ const DialogShadowStyled = styled.div`
 `;
 
 const DialogStyled = styled.div`
-  width: 30%;
+  width: 70%;
   background-color: #fff;
   position: fixed;
   left: 50%;
@@ -51,16 +52,16 @@ const PriceStyled = styled.div`
   }
 `;
 
-const DescStyled = styled.div`
-  padding: 0 1rem;
-  text-align: left;
-  font-size: 1rem;
-  p {
-    font-size: 1.2rem;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-`;
+// const DescStyled = styled.div`
+//   padding: 0 1rem;
+//   text-align: left;
+//   font-size: 1rem;
+//   p {
+//     font-size: 1.2rem;
+//     margin-top: 0;
+//     margin-bottom: 0;
+//   }
+// `;
 
 const CancelIconStyled = styled.div`
   position: absolute;
@@ -75,6 +76,11 @@ const CancelIconStyled = styled.div`
 `;
 
 const OrderManageStyled = styled.div``;
+
+const TotalPriceStyled = styled.span`
+  margin-left: 1rem;
+  font-size: 1.2rem;
+`;
 
 export const OrderButtonDivStyled = styled.div`
   height: 60px;
@@ -101,6 +107,10 @@ export const OrderButtonStyled = styled.div`
   }
 `;
 
+export const getPrice = (order) => {
+  return order.quantity * order.price;
+};
+
 const FoodModalContainer = ({
   openFoodHook,
   setOpenFoodHook,
@@ -116,7 +126,7 @@ const FoodModalContainer = ({
 
   const order = {
     ...openFoodHook,
-    quantity,
+    quantity: quantity.quantityHook,
   };
   const addToOrder = () => {
     //previous orders + latest order
@@ -161,16 +171,20 @@ const FoodModalContainer = ({
           <PriceStyled>
             <h3>{openFoodHook.price}</h3>
           </PriceStyled>
-          <DescStyled>
+          {/* <DescStyled>`
             <p>{openFoodHook.desc}</p>
-          </DescStyled>
+          </DescStyled> */}
           <OrderManageStyled>
             {/* passing quantity props */}
             <QuantityInput quantity={quantity}></QuantityInput>
           </OrderManageStyled>
+          <ToppingInput></ToppingInput>
           <OrderButtonDivStyled>
             <OrderButtonStyled onClick={addToOrder}>
               Add To Order
+              <TotalPriceStyled>
+                {`$ ${getPrice(order).toFixed(2)}`}
+              </TotalPriceStyled>
             </OrderButtonStyled>
           </OrderButtonDivStyled>
         </DialogStyled>

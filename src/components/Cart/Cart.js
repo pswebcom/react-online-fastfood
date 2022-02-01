@@ -2,6 +2,7 @@ import React from "react";
 import { CartStyled } from "../common";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { getPrice } from "../FoodModal/FoodModal";
 
 const OrderContentStyled = styled.div`
   padding: 10px 0;
@@ -32,10 +33,9 @@ const OrderItemsContainerStyled = styled.div`
   overflow: scroll;
   width: 99.5%;
   font-size: 1.2rem;
-
+  height: 500px;
   padding: 1rem 0 2rem 0;
   border-bottom: 1px solid gray;
-  margin-bottom: 8rem;
   @media screen and (max-width: 991px) {
     font-size: 1.1rem;
   }
@@ -138,9 +138,21 @@ const OrderCancelStyled = styled.div`
   }
 `;
 
+const SubTotalLabelStyled = styled.h3`
+  font-size: 1.5rem;
+`;
+
+const SubTotalStyled = styled.h3`
+  font-size: 1.5rem;
+  margin-left: 2rem;
+`;
 const Cart = ({ ordersHook }) => {
   let modifiedOrders = ordersHook;
-  console.log(modifiedOrders);
+
+  const subTotal = modifiedOrders.reduce((total, order) => {
+    return total + parseFloat(getPrice(order).toFixed(2));
+  }, 0);
+
   const checkIconStaus = (modifiedOrders) => {
     modifiedOrders.forEach((mOrder) => {
       let _id = mOrder.id;
@@ -172,7 +184,6 @@ const Cart = ({ ordersHook }) => {
               <div>This Cart has {ordersHook.length} Items</div>
             </OrderContainerStyled>
           )}
-
           <OrderItemsContainerStyled>
             {/* {showItems()} */}
             {ordersHook.map((order) => (
@@ -186,30 +197,28 @@ const Cart = ({ ordersHook }) => {
                 <OrderItemStyled>{order.name}</OrderItemStyled>
                 <OrderPriceStyled>
                   $
-                  {`${order.quantity.quantityHook}` *
-                    parseFloat(`${order.price}`)}
+                  {(`${order.quantity}` * parseFloat(`${order.price}`)).toFixed(
+                    2
+                  )}
                 </OrderPriceStyled>
                 <OrderQtyStyled>
                   {order.quantity.quantityHook === 1
-                    ? `${order.quantity.quantityHook} Item`
-                    : `${order.quantity.quantityHook} Items`}
+                    ? `${order.quantity} Item`
+                    : `${order.quantity} Items`}
                 </OrderQtyStyled>
                 <OrderEditStyled>
                   <i class="fas fa-edit"></i>
-                  {/* <TooltipEdit className="xcv">
-                    <span>Edit Order</span>
-                  </TooltipEdit> */}
                 </OrderEditStyled>
                 <OrderCancelStyled>
                   <i className="fas fa-window-close"></i>
-                  {/* <TooltipCancel>
-                    <span>Cancel</span>
-                  </TooltipCancel> */}
                 </OrderCancelStyled>
               </RowStyled>
             ))}
           </OrderItemsContainerStyled>
-
+          <RowStyled>
+            <SubTotalLabelStyled>SubTotal</SubTotalLabelStyled>
+            <SubTotalStyled>$ {subTotal.toFixed(2)}</SubTotalStyled>
+          </RowStyled>
           <OrderButtonDivStyled>Proceed To Checkout</OrderButtonDivStyled>
         </CartStyled>
       )}
