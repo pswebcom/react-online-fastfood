@@ -63,7 +63,7 @@ const ToppingInput = ({ toppingVal }) => {
             <CheckBoxStyled
               type="checkbox"
               id="topping2"
-              name="topping1"
+              name="topping2"
               value="Black Olives"
             />
             <label for="topping2">Black Olives</label>
@@ -72,7 +72,7 @@ const ToppingInput = ({ toppingVal }) => {
             <CheckBoxStyled
               type="checkbox"
               id="topping3"
-              name="topping1"
+              name="topping3"
               value="Green Peppers"
             />
             <label for="topping3">Green Pepper</label>
@@ -81,7 +81,7 @@ const ToppingInput = ({ toppingVal }) => {
             <CheckBoxStyled
               type="checkbox"
               id="topping4"
-              name="topping1"
+              name="topping4"
               value="Onions"
             />
             <label for="topping4">Onions</label>
@@ -90,7 +90,7 @@ const ToppingInput = ({ toppingVal }) => {
             <CheckBoxStyled
               type="checkbox"
               id="topping5"
-              name="topping1"
+              name="topping5"
               value="Extra Cheese"
             />
             <label for="topping5">Extra Cheese</label>
@@ -98,7 +98,7 @@ const ToppingInput = ({ toppingVal }) => {
           <ToppingStyled>
             <CheckBoxStyled
               type="checkbox"
-              id="topping1"
+              id="topping6"
               name="topping6"
               value="Chicken"
             />
