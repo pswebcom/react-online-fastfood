@@ -9,7 +9,7 @@ import {
 const drinks = [
   {
     id: "d1",
-    name: "Coke",
+    name: "Coke.",
     price: 3.75,
     color: "#C71514",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -18,7 +18,7 @@ const drinks = [
   },
   {
     id: "d2",
-    name: "Diet Coke",
+    name: "Diet Coke.",
     price: 3.55,
     color: "#ADB2B6",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -26,7 +26,7 @@ const drinks = [
   },
   {
     id: "d3",
-    name: "Pepsi",
+    name: "Pepsi.",
     price: 3.75,
     color: "#056DB4",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -34,7 +34,7 @@ const drinks = [
   },
   {
     id: "d4",
-    name: "Diet Pepsi",
+    name: "Diet Pepsi.",
     price: 3.5,
     color: "#837D79",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
@@ -42,7 +42,7 @@ const drinks = [
   },
   {
     id: "d5",
-    name: "Sprite",
+    name: "Sprite.",
     price: 3.75,
     color: "#036B26",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",

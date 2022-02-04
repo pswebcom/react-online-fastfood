@@ -36,11 +36,19 @@ const CheckBoxStyled = styled.input`
   border: 2px solid red;
 `;
 
-const ToppingInput = () => {
+const ToppingInput = ({ toppingVal }) => {
+  let val;
+
+  toppingVal.includes("Burger")
+    ? (val = "Choose Ingredients")
+    : toppingVal.includes("Pizza")
+    ? (val = "Choose Toppings")
+    : (val = "");
+
   return (
     <>
       <ToppingsContainerStyled>
-        <h3>Choose Toppings</h3>
+        <h3> {val}</h3>
         <ToppingsStyled>
           <ToppingStyled>
             <CheckBoxStyled

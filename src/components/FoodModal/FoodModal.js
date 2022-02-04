@@ -110,7 +110,7 @@ export const OrderButtonStyled = styled.div`
 export const getPrice = (order) => {
   return order.quantity * order.price;
 };
-
+let toppingVal;
 const FoodModalContainer = ({
   openFoodHook,
   setOpenFoodHook,
@@ -151,6 +151,8 @@ const FoodModalContainer = ({
     checkIconStaus(openFoodHook);
   }
 
+  toppingVal = openFoodHook.name;
+
   return (
     <>
       <DialogShadowStyled>
@@ -171,14 +173,15 @@ const FoodModalContainer = ({
           <PriceStyled>
             <h3>{openFoodHook.price}</h3>
           </PriceStyled>
-          {/* <DescStyled>`
-            <p>{openFoodHook.desc}</p>
-          </DescStyled> */}
           <OrderManageStyled>
             {/* passing quantity props */}
             <QuantityInput quantity={quantity}></QuantityInput>
           </OrderManageStyled>
-          <ToppingInput></ToppingInput>
+          {!openFoodHook.name.includes(".") ? (
+            <ToppingInput toppingVal={toppingVal}></ToppingInput>
+          ) : (
+            ""
+          )}
           <OrderButtonDivStyled>
             <OrderButtonStyled onClick={addToOrder}>
               Add To Order
