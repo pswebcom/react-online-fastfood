@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-online-fastfood/static/css/main.99576496.css",
+    "main.js": "/react-online-fastfood/static/js/main.86e1fb1f.js",
+    "static/js/787.7bb812ef.chunk.js": "/react-online-fastfood/static/js/787.7bb812ef.chunk.js",
+    "index.html": "/react-online-fastfood/index.html",
+    "main.99576496.css.map": "/react-online-fastfood/static/css/main.99576496.css.map",
+    "main.86e1fb1f.js.map": "/react-online-fastfood/static/js/main.86e1fb1f.js.map",
+    "787.7bb812ef.chunk.js.map": "/react-online-fastfood/static/js/787.7bb812ef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.99576496.css",
+    "static/js/main.86e1fb1f.js"
+  ]
+}
